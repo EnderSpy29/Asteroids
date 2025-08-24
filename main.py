@@ -30,6 +30,10 @@ def main():
                 return
 
         updatable.update(dt)
+        for flying_rock in asteroids:
+            if player1.collision(flying_rock):
+                print("Game over!")
+                return
 
         screen.fill(Black)
         for needs_drawing in drawable:
