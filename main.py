@@ -37,6 +37,11 @@ def main():
             if player1.collision(flying_rock):
                 print("Game over!")
                 return
+            for bullet in shots:
+                if flying_rock.collision(bullet):
+                    bullet.kill()
+                    flying_rock.split()
+
 
         screen.fill(Black)
         for needs_drawing in drawable:
